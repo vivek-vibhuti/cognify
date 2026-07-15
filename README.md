@@ -1,5 +1,7 @@
 # 🎧 Study Buddy AI
 
+![Study Buddy AI Preview](./assets/screenshot-ui.png)
+
 > An AI-powered quiz generator that creates multiple-choice and fill-in-the-blank questions on any topic, using Groq LLM and LangChain.
 
 ---

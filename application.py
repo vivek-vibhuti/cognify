@@ -20,14 +20,14 @@ def main():
     
     /* Background Gradient styling */
     .stApp {
-        background: radial-gradient(circle at 90% 10%, rgba(121, 40, 202, 0.15), transparent 45%),
-                    radial-gradient(circle at 10% 90%, rgba(0, 112, 243, 0.15), transparent 45%),
+        background: radial-gradient(circle at 90% 10%, rgba(239, 68, 68, 0.12), transparent 45%),
+                    radial-gradient(circle at 10% 90%, rgba(239, 68, 68, 0.08), transparent 45%),
                     #0e1117;
     }
     
     /* App header & title gradient */
     .cognify-title {
-        background: linear-gradient(135deg, #0070f3 0%, #7928ca 100%);
+        background: linear-gradient(135deg, #ff6b6b 0%, #ef4444 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-size: 3.5rem;
@@ -48,7 +48,7 @@ def main():
     /* Custom divider line */
     .divider {
         height: 2px;
-        background: linear-gradient(90deg, transparent, rgba(121, 40, 202, 0.3), transparent);
+        background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.3), transparent);
         margin: 25px 0;
     }
     
@@ -76,8 +76,8 @@ def main():
     
     /* Result summary card */
     .score-banner {
-        background: linear-gradient(135deg, rgba(0, 112, 243, 0.1) 0%, rgba(121, 40, 202, 0.1) 100%);
-        border: 1px solid rgba(121, 40, 202, 0.2);
+        background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(185, 28, 28, 0.1) 100%);
+        border: 1px solid rgba(239, 68, 68, 0.2);
         border-radius: 12px;
         padding: 25px;
         text-align: center;
@@ -110,8 +110,8 @@ def main():
     
     /* Streamlit button styling overrides */
     div.stButton > button {
-        background: linear-gradient(135deg, #0070f3 0%, #7928ca 100%) !important;
-        color: white !important;
+        background: #ef4444 !important;
+        color: #000000 !important;
         border: none !important;
         padding: 10px 24px !important;
         border-radius: 8px !important;
@@ -119,12 +119,14 @@ def main():
         font-weight: 600 !important;
         transition: all 0.3s ease !important;
         width: 100% !important;
-        box-shadow: 0 4px 15px rgba(121, 40, 202, 0.3) !important;
+        box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3) !important;
     }
     
     div.stButton > button:hover {
+        background: #dc2626 !important;
+        color: #000000 !important;
         transform: translateY(-2px) !important;
-        box-shadow: 0 6px 20px rgba(121, 40, 202, 0.5) !important;
+        box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5) !important;
     }
     
     div.stButton > button:active {
@@ -229,7 +231,7 @@ def main():
             <div class='score-banner'>
                 <span style='font-size: 1.2rem; color: #a8a8a8; text-transform: uppercase;'>Your Score</span>
                 <h1 style='font-size: 3.5rem; margin: 5px 0; color: #ffffff;'>{score_percentage}%</h1>
-                <span style='font-size: 1.1rem; color: #a855f7;'>{correct_count} out of {total_questions} correct</span>
+                <span style='font-size: 1.1rem; color: #ef4444;'>{correct_count} out of {total_questions} correct</span>
             </div>
             """, unsafe_allow_html=True)
 

@@ -55,7 +55,7 @@ class QuizManager:
             # Question card display
             st.markdown(f"""
             <div class='question-card'>
-                <span style='font-size: 0.85rem; font-weight: 600; color: #7928ca; text-transform: uppercase; letter-spacing: 1px;'>Question {i+1} • {q['type']}</span>
+                <span style='font-size: 0.85rem; font-weight: 600; color: #ef4444; text-transform: uppercase; letter-spacing: 1px;'>Question {i+1} • {q['type']}</span>
                 <p style='font-size: 1.1rem; margin-top: 6px; margin-bottom: 0px; font-weight: 500;'>{q['question']}</p>
             </div>
             """, unsafe_allow_html=True)
