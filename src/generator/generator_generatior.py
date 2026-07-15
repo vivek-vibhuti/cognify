@@ -3,6 +3,7 @@ from src.models.Question_schemea import MCQQuestion, FillBlankQuestion
 from src.prompts.template import mcq_prompt_template, fill_blank_prompt_template
 from src.llm.groq_client import get_groq_llm
 from src.config.settings import Settings
+settings = Settings
 from src.common.logger import get_logger
 from src.common.custom_exception import CustomException
 

@@ -7,4 +7,4 @@ class Settings():
     TEMPERATURE = 0.9
     MAX_RETRIES=3
 
-    settings=Settings()
+settings=Settings()

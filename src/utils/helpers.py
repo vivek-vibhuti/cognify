@@ -48,25 +48,34 @@ class QuizManager:
     
 
     def attempt_quiz(self):
-        for i,q in enumerate(self.questions):
-            st.markdown(f"**Question {i+1} : {q['question']}**")
+        if len(self.user_answers) != len(self.questions):
+            self.user_answers = [None] * len(self.questions)
 
-            if q['type']=='MCQ':
+        for i, q in enumerate(self.questions):
+            # Question card display
+            st.markdown(f"""
+            <div class='question-card'>
+                <span style='font-size: 0.85rem; font-weight: 600; color: #7928ca; text-transform: uppercase; letter-spacing: 1px;'>Question {i+1} • {q['type']}</span>
+                <p style='font-size: 1.1rem; margin-top: 6px; margin-bottom: 0px; font-weight: 500;'>{q['question']}</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+            if q['type'] == 'MCQ':
                 user_answer = st.radio(
-                    f"Select and answer for Question {i+1}",
+                    f"Select an answer for Question {i+1}",
                     q['options'],
-                    key=f"mcq_{i}"
+                    key=f"mcq_{i}",
+                    label_visibility="collapsed"
                 )
-
-                self.user_answers.append(user_answer)
-
+                self.user_answers[i] = user_answer
             else:
-                user_answer=st.text_input(
+                user_answer = st.text_input(
                     f"Fill in the blank for Question {i+1}",
-                    key = f"fill_blank_{i}"
+                    key=f"fill_blank_{i}",
+                    placeholder="Type your answer here...",
+                    label_visibility="collapsed"
                 )
-
-                self.user_answers.append(user_answer)
+                self.user_answers[i] = user_answer
 
     def evaluate_quiz(self):
         self.results=[]
@@ -87,7 +96,8 @@ class QuizManager:
 
             else:
                 result_dict['options'] = []
-                result_dict["is_correct"] = user_ans.strip().lower() == q['correct_answer'].strip().lower()
+                ans_str = user_ans if user_ans is not None else ""
+                result_dict["is_correct"] = ans_str.strip().lower() == q['correct_answer'].strip().lower()
 
             self.results.append(result_dict)
 
